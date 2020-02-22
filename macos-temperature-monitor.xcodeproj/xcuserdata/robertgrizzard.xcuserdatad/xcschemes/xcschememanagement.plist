@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CPU_Temp_XPC.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>macos-temperature-monitor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

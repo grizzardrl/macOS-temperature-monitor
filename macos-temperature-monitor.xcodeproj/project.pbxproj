@@ -12,7 +12,34 @@
 		B0DDD985240182D4008D7E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD984240182D4008D7E55 /* Assets.xcassets */; };
 		B0DDD988240182D4008D7E55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD987240182D4008D7E55 /* Preview Assets.xcassets */; };
 		B0DDD98B240182D4008D7E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD989240182D4008D7E55 /* Main.storyboard */; };
+		B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */; };
+		B0DDD99F24019F71008D7E55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99E24019F71008D7E55 /* main.m */; };
+		B0DDD9A324019F71008D7E55 /* CPU_Temp_XPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0DDD9A124019F71008D7E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0DDD975240182D1008D7E55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0DDD99724019F71008D7E55;
+			remoteInfo = CPU_Temp_XPC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B0DDD9A724019F71008D7E55 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				B0DDD9A324019F71008D7E55 /* CPU_Temp_XPC.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B0DDD97D240182D2008D7E55 /* macos-temperature-monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macos-temperature-monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,10 +50,23 @@
 		B0DDD98A240182D4008D7E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0DDD98C240182D4008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DDD98D240182D4008D7E55 /* macos_temperature_monitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macos_temperature_monitor.entitlements; sourceTree = "<group>"; };
+		B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = CPU_Temp_XPC.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0DDD99A24019F71008D7E55 /* CPU_Temp_XPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPU_Temp_XPCProtocol.h; sourceTree = "<group>"; };
+		B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPU_Temp_XPC.h; sourceTree = "<group>"; };
+		B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPU_Temp_XPC.m; sourceTree = "<group>"; };
+		B0DDD99E24019F71008D7E55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0DDD9A024019F71008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B0DDD97A240182D2008D7E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DDD99524019F71008D7E55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DDD97F240182D2008D7E55 /* macos-temperature-monitor */,
+				B0DDD99924019F71008D7E55 /* CPU_Temp_XPC */,
 				B0DDD97E240182D2008D7E55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DDD97D240182D2008D7E55 /* macos-temperature-monitor.app */,
+				B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +116,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B0DDD99924019F71008D7E55 /* CPU_Temp_XPC */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDD99A24019F71008D7E55 /* CPU_Temp_XPCProtocol.h */,
+				B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.h */,
+				B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */,
+				B0DDD99E24019F71008D7E55 /* main.m */,
+				B0DDD9A024019F71008D7E55 /* Info.plist */,
+			);
+			path = CPU_Temp_XPC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -84,15 +138,34 @@
 				B0DDD979240182D2008D7E55 /* Sources */,
 				B0DDD97A240182D2008D7E55 /* Frameworks */,
 				B0DDD97B240182D2008D7E55 /* Resources */,
+				B0DDD9A724019F71008D7E55 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B0DDD9A224019F71008D7E55 /* PBXTargetDependency */,
 			);
 			name = "macos-temperature-monitor";
 			productName = "macos-temperature-monitor";
 			productReference = B0DDD97D240182D2008D7E55 /* macos-temperature-monitor.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B0DDD99724019F71008D7E55 /* CPU_Temp_XPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0DDD9A424019F71008D7E55 /* Build configuration list for PBXNativeTarget "CPU_Temp_XPC" */;
+			buildPhases = (
+				B0DDD99424019F71008D7E55 /* Sources */,
+				B0DDD99524019F71008D7E55 /* Frameworks */,
+				B0DDD99624019F71008D7E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPU_Temp_XPC;
+			productName = CPU_Temp_XPC;
+			productReference = B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -105,6 +178,9 @@
 				ORGANIZATIONNAME = "Robert Grizzard";
 				TargetAttributes = {
 					B0DDD97C240182D2008D7E55 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B0DDD99724019F71008D7E55 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -123,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				B0DDD97C240182D2008D7E55 /* macos-temperature-monitor */,
+				B0DDD99724019F71008D7E55 /* CPU_Temp_XPC */,
 			);
 		};
 /* End PBXProject section */
@@ -138,6 +215,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0DDD99624019F71008D7E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -150,7 +234,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0DDD99424019F71008D7E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0DDD99F24019F71008D7E55 /* main.m in Sources */,
+				B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0DDD9A224019F71008D7E55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0DDD99724019F71008D7E55 /* CPU_Temp_XPC */;
+			targetProxy = B0DDD9A124019F71008D7E55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B0DDD989240182D4008D7E55 /* Main.storyboard */ = {
@@ -323,6 +424,34 @@
 			};
 			name = Release;
 		};
+		B0DDD9A524019F71008D7E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z9J228S42F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CPU_Temp_XPC/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.grizz.CPU-Temp-XPC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B0DDD9A624019F71008D7E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z9J228S42F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CPU_Temp_XPC/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.grizz.CPU-Temp-XPC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +469,15 @@
 			buildConfigurations = (
 				B0DDD991240182D4008D7E55 /* Debug */,
 				B0DDD992240182D4008D7E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0DDD9A424019F71008D7E55 /* Build configuration list for PBXNativeTarget "CPU_Temp_XPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0DDD9A524019F71008D7E55 /* Debug */,
+				B0DDD9A624019F71008D7E55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
