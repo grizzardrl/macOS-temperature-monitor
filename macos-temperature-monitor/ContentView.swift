@@ -13,8 +13,11 @@ struct ContentView: View {
     @ObservedObject var my_XPCTester = XPC_Tester()
     @State private var textFieldInput = ""
     
+    @ObservedObject var my_BG_T = Background_Timer()
+    
     var body: some View {
         VStack {
+            Text("Counter value: \(my_BG_T.counter)")
             TextField("Enter text", text: $textFieldInput)
             Text("Output text: \(my_XPCTester.returnedString)").frame(minWidth: 600, minHeight: 20, alignment: .center)
             Button(action: {

@@ -18,6 +18,7 @@
 		B0DDD9A82401A390008D7E55 /* CPU_Temp_XPC_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */; };
 		B0DDD9A92401A397008D7E55 /* CPU_Temp_XPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */; };
 		B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */; };
+		B0DDD9AD2401D32F008D7E55 /* Background_Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B0DDD99E24019F71008D7E55 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B0DDD9A024019F71008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPC_Tester.swift; sourceTree = "<group>"; };
+		B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B0DDD98D240182D4008D7E55 /* macos_temperature_monitor.entitlements */,
 				B0DDD986240182D4008D7E55 /* Preview Content */,
 				B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */,
+				B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */,
 			);
 			path = "macos-temperature-monitor";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDD983240182D2008D7E55 /* ContentView.swift in Sources */,
+				B0DDD9AD2401D32F008D7E55 /* Background_Timer.swift in Sources */,
 				B0DDD981240182D2008D7E55 /* AppDelegate.swift in Sources */,
 				B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */,
 			);
