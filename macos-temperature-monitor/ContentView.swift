@@ -9,9 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var my_XPCTester = XPC_Tester()
+    @State private var textFieldInput = ""
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack {
+            TextField("Enter text", text: $textFieldInput)
+            Text("Output text: \(my_XPCTester.returnedString)").frame(minWidth: 600, minHeight: 20, alignment: .center)
+            Button(action: {
+                self.my_XPCTester.setInputString(input: self.textFieldInput)
+                self.my_XPCTester.XPC_Test(input: self.textFieldInput)
+            }) {
+                Text("Convert")
+            }
+        }.padding()
     }
 }
 

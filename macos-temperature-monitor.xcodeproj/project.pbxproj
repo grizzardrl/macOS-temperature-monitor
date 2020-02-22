@@ -12,9 +12,12 @@
 		B0DDD985240182D4008D7E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD984240182D4008D7E55 /* Assets.xcassets */; };
 		B0DDD988240182D4008D7E55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD987240182D4008D7E55 /* Preview Assets.xcassets */; };
 		B0DDD98B240182D4008D7E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DDD989240182D4008D7E55 /* Main.storyboard */; };
-		B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */; };
-		B0DDD99F24019F71008D7E55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99E24019F71008D7E55 /* main.m */; };
+		B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift */; };
+		B0DDD99F24019F71008D7E55 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99E24019F71008D7E55 /* main.swift */; };
 		B0DDD9A324019F71008D7E55 /* CPU_Temp_XPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B0DDD9A82401A390008D7E55 /* CPU_Temp_XPC_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */; };
+		B0DDD9A92401A397008D7E55 /* CPU_Temp_XPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */; };
+		B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +54,12 @@
 		B0DDD98C240182D4008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DDD98D240182D4008D7E55 /* macos_temperature_monitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macos_temperature_monitor.entitlements; sourceTree = "<group>"; };
 		B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = CPU_Temp_XPC.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0DDD99A24019F71008D7E55 /* CPU_Temp_XPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPU_Temp_XPCProtocol.h; sourceTree = "<group>"; };
-		B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPU_Temp_XPC.h; sourceTree = "<group>"; };
-		B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPU_Temp_XPC.m; sourceTree = "<group>"; };
-		B0DDD99E24019F71008D7E55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU_Temp_XPC_Protocol.swift; sourceTree = "<group>"; };
+		B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU_Temp_XPC.swift; sourceTree = "<group>"; };
+		B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU_Temp_XPC_Delegate.swift; sourceTree = "<group>"; };
+		B0DDD99E24019F71008D7E55 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B0DDD9A024019F71008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPC_Tester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				B0DDD98C240182D4008D7E55 /* Info.plist */,
 				B0DDD98D240182D4008D7E55 /* macos_temperature_monitor.entitlements */,
 				B0DDD986240182D4008D7E55 /* Preview Content */,
+				B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */,
 			);
 			path = "macos-temperature-monitor";
 			sourceTree = "<group>";
@@ -119,10 +124,10 @@
 		B0DDD99924019F71008D7E55 /* CPU_Temp_XPC */ = {
 			isa = PBXGroup;
 			children = (
-				B0DDD99A24019F71008D7E55 /* CPU_Temp_XPCProtocol.h */,
-				B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.h */,
-				B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC.m */,
-				B0DDD99E24019F71008D7E55 /* main.m */,
+				B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */,
+				B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */,
+				B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift */,
+				B0DDD99E24019F71008D7E55 /* main.swift */,
 				B0DDD9A024019F71008D7E55 /* Info.plist */,
 			);
 			path = CPU_Temp_XPC;
@@ -231,6 +236,7 @@
 			files = (
 				B0DDD983240182D2008D7E55 /* ContentView.swift in Sources */,
 				B0DDD981240182D2008D7E55 /* AppDelegate.swift in Sources */,
+				B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,8 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0DDD99F24019F71008D7E55 /* main.m in Sources */,
-				B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC.m in Sources */,
+				B0DDD9A92401A397008D7E55 /* CPU_Temp_XPC.swift in Sources */,
+				B0DDD9A82401A390008D7E55 /* CPU_Temp_XPC_Protocol.swift in Sources */,
+				B0DDD99F24019F71008D7E55 /* main.swift in Sources */,
+				B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +440,13 @@
 				DEVELOPMENT_TEAM = Z9J228S42F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CPU_Temp_XPC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../../../Frameworks​";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.grizz.CPU-Temp-XPC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "\"\"";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -446,9 +458,13 @@
 				DEVELOPMENT_TEAM = Z9J228S42F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CPU_Temp_XPC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../../../Frameworks​";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.grizz.CPU-Temp-XPC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "\"\"";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
