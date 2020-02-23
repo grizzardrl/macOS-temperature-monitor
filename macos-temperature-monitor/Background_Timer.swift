@@ -13,24 +13,27 @@ import Foundation
 
 class Background_Timer: ObservableObject {
     
-    @Published var counter = 0
+    var my_CPU_Temp_Handler = CPU_Temp_Handler()
+    @Published var cpu_Temp_copy = ""
     
     let myRT: RepeatingTimer
     
     init() {
+        myRT = RepeatingTimer(timeInterval: 2)
         
-        myRT = RepeatingTimer(timeInterval: 10)
         myRT.eventHandler = {
             print("Timer Fired")
-            self.incrementCounter()
-            print("Counter value: \(self.counter)")
+            self.updateCPUTemp()
+            print("CPU temp: \(self.my_CPU_Temp_Handler.CPU_Temp)")
         }
         myRT.resume()
     }
     
-    func incrementCounter() {
-        DispatchQueue.main.async {
-            self.counter += 1
+    func updateCPUTemp() {
+        DispatchQueue.main.sync {
+            self.my_CPU_Temp_Handler.setCPUTemp()
+            let temp = self.my_CPU_Temp_Handler.CPU_Temp
+            self.cpu_Temp_copy = String(format: "%3.2f", (temp as NSString).doubleValue)
         }
     }
     

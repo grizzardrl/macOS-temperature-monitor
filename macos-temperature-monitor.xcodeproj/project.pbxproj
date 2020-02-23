@@ -17,8 +17,9 @@
 		B0DDD9A324019F71008D7E55 /* CPU_Temp_XPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = B0DDD99824019F71008D7E55 /* CPU_Temp_XPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B0DDD9A82401A390008D7E55 /* CPU_Temp_XPC_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */; };
 		B0DDD9A92401A397008D7E55 /* CPU_Temp_XPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */; };
-		B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */; };
+		B0DDD9AB2401A937008D7E55 /* CPU_Temp_Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AA2401A937008D7E55 /* CPU_Temp_Handler.swift */; };
 		B0DDD9AD2401D32F008D7E55 /* Background_Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */; };
+		B0DDD9B32401DDF8008D7E55 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = B0DDD9B22401DDF8008D7E55 /* smc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,11 @@
 		B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU_Temp_XPC_Delegate.swift; sourceTree = "<group>"; };
 		B0DDD99E24019F71008D7E55 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B0DDD9A024019F71008D7E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPC_Tester.swift; sourceTree = "<group>"; };
+		B0DDD9AA2401A937008D7E55 /* CPU_Temp_Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU_Temp_Handler.swift; sourceTree = "<group>"; };
 		B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_Timer.swift; sourceTree = "<group>"; };
+		B0DDD9B02401DDF7008D7E55 /* CPU_Temp_XPC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CPU_Temp_XPC-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0DDD9B12401DDF8008D7E55 /* smc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
+		B0DDD9B22401DDF8008D7E55 /* smc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,7 @@
 				B0DDD98C240182D4008D7E55 /* Info.plist */,
 				B0DDD98D240182D4008D7E55 /* macos_temperature_monitor.entitlements */,
 				B0DDD986240182D4008D7E55 /* Preview Content */,
-				B0DDD9AA2401A937008D7E55 /* XPC_Tester.swift */,
+				B0DDD9AA2401A937008D7E55 /* CPU_Temp_Handler.swift */,
 				B0DDD9AC2401D32F008D7E55 /* Background_Timer.swift */,
 			);
 			path = "macos-temperature-monitor";
@@ -127,6 +131,7 @@
 		B0DDD99924019F71008D7E55 /* CPU_Temp_XPC */ = {
 			isa = PBXGroup;
 			children = (
+				B0DDD9AE2401DC37008D7E55 /* SMC */,
 				B0DDD99A24019F71008D7E55 /* CPU_Temp_XPC_Protocol.swift */,
 				B0DDD99B24019F71008D7E55 /* CPU_Temp_XPC.swift */,
 				B0DDD99C24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift */,
@@ -134,6 +139,16 @@
 				B0DDD9A024019F71008D7E55 /* Info.plist */,
 			);
 			path = CPU_Temp_XPC;
+			sourceTree = "<group>";
+		};
+		B0DDD9AE2401DC37008D7E55 /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDD9B12401DDF8008D7E55 /* smc.h */,
+				B0DDD9B22401DDF8008D7E55 /* smc.c */,
+				B0DDD9B02401DDF7008D7E55 /* CPU_Temp_XPC-Bridging-Header.h */,
+			);
+			path = SMC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +205,7 @@
 					};
 					B0DDD99724019F71008D7E55 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -240,7 +256,7 @@
 				B0DDD983240182D2008D7E55 /* ContentView.swift in Sources */,
 				B0DDD9AD2401D32F008D7E55 /* Background_Timer.swift in Sources */,
 				B0DDD981240182D2008D7E55 /* AppDelegate.swift in Sources */,
-				B0DDD9AB2401A937008D7E55 /* XPC_Tester.swift in Sources */,
+				B0DDD9AB2401A937008D7E55 /* CPU_Temp_Handler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +266,7 @@
 			files = (
 				B0DDD9A92401A397008D7E55 /* CPU_Temp_XPC.swift in Sources */,
 				B0DDD9A82401A390008D7E55 /* CPU_Temp_XPC_Protocol.swift in Sources */,
+				B0DDD9B32401DDF8008D7E55 /* smc.c in Sources */,
 				B0DDD99F24019F71008D7E55 /* main.swift in Sources */,
 				B0DDD99D24019F71008D7E55 /* CPU_Temp_XPC_Delegate.swift in Sources */,
 			);
@@ -439,6 +456,7 @@
 		B0DDD9A524019F71008D7E55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Z9J228S42F;
@@ -449,7 +467,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CPU_Temp_XPC/SMC/CPU_Temp_XPC-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "\"\"";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -457,6 +477,7 @@
 		B0DDD9A624019F71008D7E55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Z9J228S42F;
@@ -467,6 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CPU_Temp_XPC/SMC/CPU_Temp_XPC-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "\"\"";
 				SWIFT_VERSION = 5.0;
 			};

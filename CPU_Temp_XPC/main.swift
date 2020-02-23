@@ -1,5 +1,5 @@
 //
-//  CPU_Temp_XPC_Protocol.swift
+//  main.swift
 //  CPU_Temp_XPC
 //
 //  Created by Robert Grizzard on 2/22/20.
@@ -11,7 +11,7 @@
 
 import Foundation
 
-@objc public protocol CPU_Temp_XPC_Protocol {
-    func getCPUTemp(withReply reply: @escaping (String) -> Void)
-}
-
+let delegate = CPU_Temp_XPC_Delegate()
+let listener = NSXPCListener.service()
+listener.delegate = delegate
+listener.resume()
